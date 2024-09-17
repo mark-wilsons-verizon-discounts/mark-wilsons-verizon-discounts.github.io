@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Mark Wilson's verizon discounts</title>
+  </head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <body>
+    <h1>Mark Wilson's Verizon Discounts</h1>
+    <div>
+      <p>Hi, I'm mark!</p>
+      <br>
+      <a href="https://github.com/mark-wilsons-verizon-discounts">Github</a>
+      <br>
+      <button id="get-discounts">Click to get discounts</button>
+    </div>
+  </body>
+  <script>
+    //https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript
+    function getDiscountCode(length) {
+      let result = '';
+      const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      const charactersLength = characters.length;
+      let counter = 0;
+      while (counter < length) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        counter += 1;
+      }
+      return result;
+    }
+    document.getElementById("get-discounts").onclick = function(){
+      const percent = round(Math.random() * 100);
+      const code = getDiscountCode(5);
+      alert(`Use code ${code} to get ${percent}% off deal!`)
+      
+    }
+  </script>
+</html>
