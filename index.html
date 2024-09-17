@@ -11,6 +11,8 @@
       <br>
       <a href="https://github.com/mark-wilsons-verizon-discounts">Github</a>
       <br>
+      <br>
+      <br>
       <button id="get-discounts">Click to get discounts</button>
     </div>
   </body>
@@ -28,7 +30,7 @@
       return result;
     }
     document.getElementById("get-discounts").onclick = function(){
-      const percent = round(Math.random() * 100);
+      const percent = Math.round(Math.random() * 100);
       const code = getDiscountCode(5);
       alert(`Use code ${code} to get ${percent}% off deal!`)
       
