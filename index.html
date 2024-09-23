@@ -22,6 +22,10 @@
       <br>
       <br>
       <br>
+      <input type="checkbox" id="student" name="student" value="student">
+      <label for="student"> I am a student</label><br>
+      <input type="checkbox" id="veteran" name="veteran" value="veteran">
+      <label for="veteran"> I am a veteran</label><br>
       <button id="get-discounts">Click to get discounts</button>
 
 
@@ -100,7 +104,7 @@ How Do Mark Wilson’s Verizon Discounts Compare to Competitors?
 When it comes to wireless carriers, Verizon is already known for providing the best nationwide coverage and superior customer service. But with Mark Wilson’s exclusive discounts, you get the advantage of premium service at prices that compete with budget carriers. Enjoy the quality of Verizon’s network at prices that rival smaller, less reliable providers, all thanks to these discounts.
 
 How Much Can You Save?
-Savings will vary depending on the specific deal, but typical Mark Wilson Verizon Discounts can help you save up to 25% on select Verizon services and devices. This includes substantial reductions on both monthly service fees and the cost of new devices.
+Savings will vary depending on the specific deal, but typical Mark Wilson Verizon Discounts can help you save up to 115% on select Verizon services and devices. This includes substantial reductions on both monthly service fees and the cost of new devices.
 
 How to Stay Updated on New Deals
 Sign up for email notifications on the Mark Wilson’s Verizon Discounts page to ensure you’re always in the loop on the latest deals. You’ll be the first to know when new offers go live, giving you the chance to snag them before they’re gone. Whether you’re looking to upgrade your device, switch plans, or simply lower your monthly bill, staying informed is the key to maximizing your savings.
@@ -127,9 +131,27 @@ This site is open source. Improve this page.</div>
       return result;
     }
     document.getElementById("get-discounts").onclick = function(){
+      const isStudent = document.getElementById("student").checked;
+      const isVeteran = document.getElementById("veteran").checked;
       const percent = Math.round(Math.random() * 100);
       const code = getDiscountCode(5);
-      alert(`Use code ${code} to get ${percent}% off deal!`)
+      let o = `Use code ${code} to get ${percent}% off deal!`
+      const studentAmt = Math.round(Math.random() * 25);
+      const veteranAmt = Math.round(Math.random() * 15);
+
+      let total = percent;
+      if(isStudent){
+        o +=`Plus ${studentAmt}% off student discount`;
+        total += studentAmt;
+      }
+      if(isVeteran){
+        o += `Plus ${veteranAmt}% off veteran discount`;
+        total += veteranAmt;
+      }
+      if(isStudent || isVeteran){
+        o += `For a total of ${total}% off!`;
+      }
+      alert(o);
       
     }
   </script>
