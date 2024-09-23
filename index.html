@@ -135,17 +135,17 @@ This site is open source. Improve this page.</div>
       const isVeteran = document.getElementById("veteran").checked;
       const percent = Math.round(Math.random() * 100);
       const code = getDiscountCode(5);
-      let o = `Use code ${code} to get ${percent}% off deal!`
+      let o = `Use code ${code} to get ${percent}% off deal! `
       const studentAmt = Math.round(Math.random() * 25);
       const veteranAmt = Math.round(Math.random() * 15);
 
       let total = percent;
       if(isStudent){
-        o +=`Plus ${studentAmt}% off student discount`;
+        o +=`Plus ${studentAmt}% off student discount. `;
         total += studentAmt;
       }
       if(isVeteran){
-        o += `Plus ${veteranAmt}% off veteran discount`;
+        o += `Plus ${veteranAmt}% off veteran discount. `;
         total += veteranAmt;
       }
       if(isStudent || isVeteran){
