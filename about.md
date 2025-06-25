@@ -2,7 +2,7 @@
 
 Welcome to the epicenter of savings, confusion, and possibly enlightenment.
 
-This is **Mark Wilson's Verizon Discounts**, the cult brand no one saw coming, but everyone accidentally subscribed to. We're hosted on GitHub Pages because Squarespace said we were too beautiful.
+This is **Mark Wilson's Verizon Discounts**. We're hosted on GitHub Pages because Squarespace said we were too beautiful.
 
 ## 🚀 About This Project
 
