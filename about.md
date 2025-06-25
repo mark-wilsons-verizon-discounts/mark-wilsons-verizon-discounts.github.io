@@ -38,4 +38,4 @@ Open an issue. Create a pull request. Sacrifice a comment to the `lol` repo. Eve
 
 ---
 
-> *“’Tis a very nice website. Near infinite discounts!” – เจคอบ, Enlightened User*
+> *“’Tis a very nice website. Near infinite discounts!” – เจสัน สมิธ, Enlightened User*
