@@ -26,7 +26,7 @@ Hi, I'm Mark. I'm just a humble discount prophet wandering the digital wildernes
 * Hidden div content that's 200vh deep because... why not
 * Imaginary testimonials from people with regal names
 
-## 🛐 Join the Movement
+## Join the Movement
 
 We are not just a website. We are not just a discount. We are an experience. A feeling. A ~~slightly broken~~ static site that may or may not give you 165% off your Verizon bill.
 
