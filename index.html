@@ -173,6 +173,40 @@
       .form-section button:hover {
         background: #ddd;
       }
+
+      /* Scroll down arrow */
+      .scroll-arrow {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        cursor: pointer;
+      }
+
+      .scroll-arrow span {
+        display: block;
+        width: 30px;
+        height: 30px;
+        border-bottom: 2px solid #fff;
+        border-right: 2px solid #fff;
+        transform: rotate(45deg);
+        margin: -10px;
+        animation: scroll-arrow 2s infinite;
+      }
+
+      @keyframes scroll-arrow {
+        0% {
+          opacity: 0;
+          transform: rotate(45deg) translate(-20px, -20px);
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+          transform: rotate(45deg) translate(20px, 20px);
+        }
+      }
     </style>
   </head>
   <body>
@@ -182,7 +216,7 @@
       <h2><i>Conducting Business since 2024™</i></h2>
 
       <nav>
-        <a href="about"><strike>About</strike> Manifesto</a>
+        <a href="about"><strike>Manifesto</strike> About</a>
         <a href="info"><strike>SEO slop</strike> <i>Valuable</i> Info</a>
         <a href="https://github.com/mark-wilsons-verizon-discounts"> GitHub </a>
       </nav>
@@ -194,6 +228,9 @@
         class="spinning-img"
         id="spin-img-top"
       />
+      <div class="scroll-arrow">
+        <span></span>
+      </div>
     </header>
 
     <!-- MAIN CONTENT -->
@@ -213,8 +250,10 @@
       </p>
       <p>
         With Mark Wilson's exclusive deals, you can unlock up to
-        <strong>165%</strong> in combined savings, if you stack every possible
-        offer like a bargain-hunting sorcerer.
+        <strong>245%</strong> in combined savings, if you stack every possible
+        offer like a bargain-hunting sorcerer. Or up to 165%, if you're a
+        student veteran but not actually using Verizon. In which case, what are
+        you using these discounts on?
       </p>
 
       <div class="quote">
@@ -284,7 +323,16 @@
           total += vet;
         }
 
-        if (isStudent || isVeteran) msg += ` Total: ${total}% off.`;
+        // Add Verizon customer bonus if detected
+        if (window.isVerizon) {
+          const verizonBonus = Math.floor(Math.random() * 65) + 15; // 15-80% extra discount!
+          msg += ` 🔴 VERIZON CUSTOMER BONUS: ${verizonBonus}%!`;
+          total += verizonBonus;
+        }
+
+        if (isStudent || isVeteran || window.isVerizon) {
+          msg += ` Total: ${total}% off.`;
+        }
 
         Toastify({
           text: msg,
@@ -292,8 +340,8 @@
           close: true,
           gravity: "top",
           position: "right",
-          backgroundColor: "#333",
-          stopOnFocus: true, // Prevents dismissing of toast on hover
+          backgroundColor: window.isVerizon ? "#FF0000" : "#333",
+          stopOnFocus: true,
         }).showToast();
       };
 
@@ -306,9 +354,7 @@
         spinTop.style.transform = `rotate3d(1, 0.8, 0, ${scrollY}deg)`;
         spinBottom.style.transform = `rotateY(${scrollY / 1.2}deg)`;
       });
-    </script>
 
-    <script>
       document.addEventListener("click", function (e) {
         const explosion = document.createElement("img");
         explosion.src =
@@ -325,6 +371,46 @@
         setTimeout(() => {
           explosion.remove();
         }, 800); // Adjust for gif duration
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Function to check if user is on Verizon
+        async function checkIfVerizon() {
+          try {
+            // Using a public IP info API
+            const response = await fetch("https://ipinfo.io/json");
+            const data = await response.json();
+
+            // Check if ISP contains "verizon" (case insensitive)
+            const isVerizon =
+              data.org && data.org.toLowerCase().includes("verizon");
+
+            // Store the result for later use in discount calculation
+            window.isVerizon = isVerizon;
+
+            // Show toast notification
+            Toastify({
+              text: isVerizon
+                ? "🎉 Verizon network detected! You qualify for EXTRA discounts!"
+                : `🚫 User not on Verizon network. Discounts will be reduced.`,
+              duration: 5000,
+              close: true,
+              gravity: "top",
+              position: "center",
+              backgroundColor: isVerizon ? "#FF0000" : "#333",
+              stopOnFocus: true,
+              style: {
+                fontSize: isVerizon ? "18px" : "16px",
+                fontWeight: isVerizon ? "bold" : "normal",
+              },
+            }).showToast();
+          } catch (error) {
+            console.error("Error checking network provider:", error);
+          }
+        }
+
+        // Run the check
+        checkIfVerizon();
       });
     </script>
   </body>
