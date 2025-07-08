@@ -69,6 +69,23 @@
         padding-bottom: 4rem;
       }
 
+      @media screen and (max-width: 992px) {
+        header h1.mega {
+          font-size: 4.5rem;
+          font-weight: 600;
+          margin: 0;
+          padding-bottom: 2rem;
+        }
+
+        .spinning-img,
+        .spinning-img-bottom {
+          width: 80vw;
+          transform-style: preserve-3d;
+          transition: transform 0.1s ease-out;
+          border-radius: 10px;
+        }
+      }
+
       header h2 {
         font-weight: 400;
         font-size: 1.5rem;
