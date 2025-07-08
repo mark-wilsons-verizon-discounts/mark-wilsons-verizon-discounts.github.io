@@ -1,167 +1,331 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>Mark Wilson's verizon discounts</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mark Wilson’s Verizon Discounts</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <style>
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+        background-color: #000;
+        color: #fff;
+        overflow-x: hidden;
+      }
+
+      .image-section,
+      .image-section-bottom {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        perspective: 1000px;
+        background: #111;
+      }
+
+      .spinning-img,
+      .spinning-img-bottom {
+        width: 30vw;
+        transform-style: preserve-3d;
+        transition: transform 0.1s ease-out;
+        border-radius: 10px;
+      }
+
+      header {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: #000;
+      }
+
+      header h1 {
+        font-size: 3.5rem;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      header h2 {
+        font-weight: 400;
+        font-size: 1.5rem;
+        color: #999;
+      }
+
+      nav {
+        margin-top: 1rem;
+        font-size: 1.1rem;
+      }
+
+      nav a {
+        color: #ccc;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+
+      nav a:hover {
+        color: #fff;
+      }
+
+      .content-section {
+        padding: 60px 20px;
+        max-width: 800px;
+        margin: 0 auto;
+        color: #ddd;
+      }
+
+      .content-section p {
+        line-height: 1.6;
+      }
+
+      .quote {
+        font-style: italic;
+        color: #888;
+        margin-top: 40px;
+        text-align: center;
+      }
+
+      .form-section {
+        text-align: center;
+        padding: 60px 20px;
+      }
+
+      /* Hide the default checkbox */
+      input[type="checkbox"] {
+        display: none;
+      }
+
+      /* Create a custom checkbox */
+      .custom-checkbox {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #007bff;
+        border-radius: 4px;
+        position: relative;
+        cursor: pointer;
+        vertical-align: middle; /* Align with text */
+        margin-right: 8px; /* Space between checkbox and text */
+      }
+
+      /* Add a checkmark when checked */
+      input[type="checkbox"]:checked + .custom-checkbox::after {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: 7px;
+        width: 6px;
+        height: 12px;
+        border: solid #ff0000;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+
+      /* Add hover effect */
+      .custom-checkbox:hover {
+        background-color: #f0f8ff;
+      }
+
+      /* Style the label to align everything */
+      label {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        padding-left: 45%;
+      }
+
+      /* Style the text part */
+      .checkbox-text {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .form-section button {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 10px 30px;
+        padding-bottom: 20px;
+        background: #fff;
+        color: #000;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .form-section button:hover {
+        background: #ddd;
+      }
+    </style>
   </head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="style.css" / >
-  <meta name="google-site-verification" content="gUeBTV_bNMpyrFcrmFwzph0TpouhqdTwZH0Urm01lxA" />
   <body>
+    <!-- HERO / HEADER -->
+    <header>
+      <h1>Mark Wilson’s Verizon Discounts <span style="color: red">✓</span></h1>
+      <h2><i>Conducting Business since 2024™</i></h2>
 
-      <h1>Mark Wilson's Verizon Discounts <span style="color:red">✓</span></h1>
-      
+      <nav>
+        <a href="about"><strike>About</strike> Manifesto</a>
+        <a href="info"><strike>SEO slop</strike> <i>Valuable</i> Info</a>
+        <a href="https://github.com/mark-wilsons-verizon-discounts"> GitHub </a>
+      </nav>
+      <br />
+      <br />
+      <img
+        src="https://github.com/user-attachments/assets/93078201-3bbc-424d-ac6d-8755c5d4a9c7"
+        alt="Verizon Top"
+        class="spinning-img"
+        id="spin-img-top"
+      />
+    </header>
 
-    <h2><i>Conducting Business since 2024™</i></h2>
-    <h3><a href="about">about</a>|<a href="info"><i>valuable</i> info</a></h3>
-    <br>
-    <div>
-      <p>Hi, I'm Mark!</p>
-      <p>Looking for some verizon discounts? You have come to the right place.™ Especially if you are a student veteran.</p>
-      <br>
-      <img src="https://github.com/user-attachments/assets/93078201-3bbc-424d-ac6d-8755c5d4a9c7" width="30%">
-      <br>
-      <p>Looking for Verizon discounts? You've stumbled upon the motherlode. Whether you're a student, a veteran, or both (in which case, congrats on being overqualified for life), you're in the right place.
-<br>
-With Mark Wilson’s exclusive deals, you can unlock up to 165% in combined savings, if you stack every possible offer like a bargain-hunting sorcerer. </p>
-      <br>
-      <p>"Tis a very nice website. Near infinite discounts!" -เจสัน สมิธ</p>
-      <img src="https://avatars.githubusercontent.com/u/181895944?v=4">
-      <br>
-      <a href="https://github.com/mark-wilsons-verizon-discounts">Github</a>
-      <br>
-      <br>
-      <br>
-      <input type="checkbox" id="student" name="student" value="student">
-      <label for="student"> I am a student</label><br>
-      <input type="checkbox" id="veteran" name="veteran" value="veteran">
-      <label for="veteran"> I am a veteran</label><br>
-      <button id="get-discounts">Click to get discounts</button>
+    <!-- MAIN CONTENT -->
+    <section class="content-section">
+      <center>
+        <img
+          src="https://avatars.githubusercontent.com/u/181895944?v=4"
+          width="80"
+          style="border-radius: 50%; margin-top: 10px"
+        />
+      </center>
+      <br />
+      <p>
+        Looking for Verizon discounts? You've stumbled upon the motherlode.
+        Whether you're a student, a veteran, or both (in which case, congrats on
+        being overqualified for life), you're in the right place.
+      </p>
+      <p>
+        With Mark Wilson's exclusive deals, you can unlock up to
+        <strong>165%</strong> in combined savings, if you stack every possible
+        offer like a bargain-hunting sorcerer.
+      </p>
 
+      <div class="quote">
+        “Tis a very nice website. Near infinite discounts!” - เจสัน สมิธ
+        <br />
+      </div>
+    </section>
 
-      <div style="position:absolute;top:200vh">mark-wilsons-verizon-discounts
-Unlock Exclusive Savings with Mark Wilson’s Verizon Discounts
+    <!-- FORM -->
+    <center>
+      <section class="form-section">
+        <label>
+          <input type="checkbox" id="student" name="student" value="student" />
+          <span class="custom-checkbox"></span>
+          <span class="checkbox-text">I am a student</span>
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" id="veteran" name="veteran" value="veteran" />
+          <span class="custom-checkbox"></span>
+          <span class="checkbox-text">I am a veteran</span>
+        </label>
+        <br />
+        <button id="get-discounts">Click to get discounts</button>
+      </section>
+    </center>
 
-Are you looking for ways to save on your Verizon bills without compromising on top-tier service? Look no further than Mark Wilson’s Verizon Discounts! Offering exclusive deals on Verizon plans and services, Mark Wilson brings incredible savings to customers looking for affordable, high-quality connectivity.
+    <!-- BOTTOM IMAGE -->
+    <section class="image-section-bottom">
+      <img
+        src="https://github.com/user-attachments/assets/d764abdb-5331-43fe-8d1a-73b188ec64c3"
+        alt="Verizon Bottom"
+        class="spinning-img-bottom"
+        id="spin-img-bottom"
+      />
+    </section>
 
-Why Choose Mark Wilson’s Verizon Discounts?
-1. Big Savings on Verizon Plans
-With Mark Wilson’s Verizon Discounts, you can enjoy significant reductions on your monthly Verizon bills. Whether you’re signing up for a new plan or looking to lower your existing costs, these exclusive offers ensure you get the most out of your budget without sacrificing the fast speeds and reliability Verizon is known for.
+    <!-- SCRIPT -->
+    <script>
+      function getDiscountCode(length) {
+        const chars =
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        return Array.from(
+          { length },
+          () => chars[Math.floor(Math.random() * chars.length)]
+        ).join("");
+      }
 
-2. Discounts on Premium Devices
-Need the latest smartphone or tablet? Mark Wilson’s Verizon Discounts extend beyond service plans to include exclusive deals on premium devices. Whether you’re upgrading your current device or getting a new one, you can save big on top models like the iPhone, Samsung Galaxy, and more.
+      document.getElementById("get-discounts").onclick = function () {
+        const isStudent = document.getElementById("student").checked;
+        const isVeteran = document.getElementById("veteran").checked;
+        const base = Math.floor(Math.random() * 80);
+        const code = getDiscountCode(5);
 
-3. Flexible Family and Individual Plans
-Mark Wilson’s Verizon Discounts offer options for both individual users and family plans. Save on shared data plans, unlimited options, and more, all while benefiting from Verizon’s top-tier 5G network.
+        let msg = `Use code ${code} to get ${base}% off!`;
+        let total = base;
 
-4. Exclusive Discounts for Veterans, Teachers, and First Responders
-Special discounts for veterans, teachers, and first responders are also available through Mark Wilson’s Verizon Discounts. This exclusive program recognizes those who serve their communities, offering additional savings as a token of appreciation.
+        if (isStudent) {
+          const student = Math.floor(Math.random() * 35);
+          msg += ` Plus ${student}% student discount.`;
+          total += student;
+        }
 
-How to Access Mark Wilson’s Verizon Discounts
-Unlocking these savings is simple! Just follow these steps:
+        if (isVeteran) {
+          const vet = Math.floor(Math.random() * 50);
+          msg += ` Plus ${vet}% veteran discount.`;
+          total += vet;
+        }
 
-Visit the Official Mark Wilson Verizon Discounts Page
-Browse the latest offers on Verizon plans, devices, and services. You’ll find discounts tailored to your needs, whether you’re a new customer or an existing subscriber looking for ways to save.
+        if (isStudent || isVeteran) msg += ` Total: ${total}% off.`;
 
-Choose Your Offer
-Select the deal that works best for you. From reduced monthly rates to exclusive device savings, there’s something for everyone.
+        Toastify({
+          text: msg,
+          duration: 5000,
+          close: true,
+          gravity: "top",
+          position: "right",
+          backgroundColor: "#333",
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+        }).showToast();
+      };
 
-Apply Your Discount
-After choosing your discount, apply it directly to your Verizon account or use the promotional code at checkout.
+      // 3D SCROLL ROTATION
+      window.addEventListener("scroll", () => {
+        const scrollY = window.scrollY;
+        const spinTop = document.getElementById("spin-img-top");
+        const spinBottom = document.getElementById("spin-img-bottom");
 
-Enjoy Verizon’s Unmatched Service
-Once your discount is applied, you can enjoy Verizon’s reliable 5G network and industry-leading customer support while paying less!
+        spinTop.style.transform = `rotate3d(1, 0.8, 0, ${scrollY}deg)`;
+        spinBottom.style.transform = `rotateY(${scrollY / 1.2}deg)`;
+      });
+    </script>
 
-FAQs
-Are Mark Wilson’s Verizon Discounts available for new and existing customers?
-Yes! Whether you’re a new customer or an existing Verizon user, these exclusive discounts can help you save.
+    <script>
+      document.addEventListener("click", function (e) {
+        const explosion = document.createElement("img");
+        explosion.src =
+          "https://media.tenor.com/VtfpK4lFEMoAAAAi/explosion-boom.gif";
+        explosion.style.position = "absolute";
+        explosion.style.left = `${e.pageX - 32}px`;
+        explosion.style.top = `${e.pageY - 32}px`;
+        explosion.style.width = "64px";
+        explosion.style.height = "64px";
+        explosion.style.pointerEvents = "none";
+        explosion.style.zIndex = 9999;
+        document.body.appendChild(explosion);
 
-Can I combine Mark Wilson’s Verizon Discounts with other offers?
-Some discounts may be combinable with other Verizon promotions. Check the specific terms and conditions for each deal to maximize your savings.
-
-Do I need a special code to access Mark Wilson’s Verizon Discounts?
-In some cases, a promotional code may be required. Be sure to check the website for any details on how to claim your discount.
-
-Mark Wilson’s Verizon Discounts offer an easy way to lower your Verizon bill and get the latest devices at unbeatable prices. Start saving today and enjoy the benefits of being connected with one of the best networks in the country, all while keeping more money in your pocket!
-
-More Reasons to Love Mark Wilson’s Verizon Discounts
-5. Access to Verizon’s Unlimited Plans at Lower Costs
-With Mark Wilson’s Verizon Discounts, you can unlock unlimited data plans at discounted rates. Whether you need unlimited talk, text, or data, you’ll get the best Verizon has to offer without the premium price tag. These plans are perfect for streamers, gamers, and anyone who wants to stay connected without worrying about overage fees.
-
-6. Affordable 5G Access
-Verizon’s 5G network is one of the fastest in the world, and with Mark Wilson’s discounts, you can enjoy super-fast download speeds and seamless streaming at a fraction of the cost. Take advantage of lower prices on 5G-enabled devices and plans, and experience the future of wireless technology today.
-
-7. Student Discounts for College and High School
-Students can also benefit from special discounts. Whether you’re juggling online classes, streaming educational content, or staying in touch with friends and family, Mark Wilson’s Verizon Discounts make it more affordable for students to access Verizon’s premium network. These discounts ensure that students can stay connected without breaking the bank.
-
-8. Eco-Friendly Device Trade-In Options
-Looking to upgrade your device? With Mark Wilson’s Verizon Discounts, you can also take advantage of trade-in programs that reward you for trading in your old phone or tablet. Get a great deal on the latest devices and feel good about choosing an eco-friendly option, all while keeping your costs down.
-
-9. Discounted Accessories for Your Devices
-Don’t forget about accessories! Mark Wilson’s Verizon Discounts extend to phone cases, screen protectors, chargers, and other must-have accessories. Keep your devices protected and charged while saving on the gear you need to get the most out of your Verizon experience.
-
-What Makes Mark Wilson’s Verizon Discounts Unique?
-Exclusive Deals You Won’t Find Anywhere Else
-These discounts are exclusive to Mark Wilson’s platform, meaning you won’t find them on general Verizon pages or through other retailers. You get customized offers that meet your specific needs, from individual plans to family bundles, ensuring you save the maximum amount possible.
-
-Personalized Support and Easy Access
-Mark Wilson’s Verizon Discounts make it incredibly easy to apply for your savings. Whether you’re a new customer looking to sign up or an existing user hoping to reduce costs, the website offers step-by-step guidance to apply your discounts without hassle.
-
-Regularly Updated Deals
-The best part? Mark Wilson’s Verizon Discounts are constantly being updated to bring you the latest savings opportunities. As new Verizon promotions become available, you can be sure to find them here first, keeping you ahead of the game when it comes to cutting costs.
-
-How Do Mark Wilson’s Verizon Discounts Compare to Competitors?
-When it comes to wireless carriers, Verizon is already known for providing the best nationwide coverage and superior customer service. But with Mark Wilson’s exclusive discounts, you get the advantage of premium service at prices that compete with budget carriers. Enjoy the quality of Verizon’s network at prices that rival smaller, less reliable providers, all thanks to these discounts.
-
-How Much Can You Save?
-Savings will vary depending on the specific deal, but typical Mark Wilson Verizon Discounts can help you save up to 165% on select Verizon services and devices. This includes substantial reductions on both monthly service fees and the cost of new devices.
-
-How to Stay Updated on New Deals
-Sign up for email notifications on the Mark Wilson’s Verizon Discounts page to ensure you’re always in the loop on the latest deals. You’ll be the first to know when new offers go live, giving you the chance to snag them before they’re gone. Whether you’re looking to upgrade your device, switch plans, or simply lower your monthly bill, staying informed is the key to maximizing your savings.
-
-Conclusion: Maximize Your Verizon Savings Today!
-Mark Wilson’s Verizon Discounts offer an unbeatable opportunity to enjoy premium Verizon services at discounted rates. With offers tailored for veterans, students, teachers, families, and individual users, you’ll find a deal that fits your needs. Don’t miss out on the chance to save on the latest phones, 5G plans, and accessories while benefiting from one of the most reliable networks in the country.
-
-Head to Mark Wilson’s Verizon Discounts today and start saving!
-
-This site is open source. Improve this page.</div>
-    </div>
+        setTimeout(() => {
+          explosion.remove();
+        }, 800); // Adjust for gif duration
+      });
+    </script>
   </body>
-  <script>
-    //https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript
-    function getDiscountCode(length) {
-      let result = '';
-      const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-      const charactersLength = characters.length;
-      let counter = 0;
-      while (counter < length) {
-        result += characters.charAt(Math.floor(Math.random() * charactersLength));
-        counter += 1;
-      }
-      return result;
-    }
-    document.getElementById("get-discounts").onclick = function(){
-      const isStudent = document.getElementById("student").checked;
-      const isVeteran = document.getElementById("veteran").checked;
-      const percent = Math.round(Math.random() * 80);
-      const code = getDiscountCode(5);
-      let o = `Use code ${code} to get ${percent}% off deal! `
-      const studentAmt = Math.round(Math.random() * 35);
-      const veteranAmt = Math.round(Math.random() * 50);
-
-      let total = percent;
-      if(isStudent){
-        o +=`Plus ${studentAmt}% off student discount. `;
-        total += studentAmt;
-      }
-      if(isVeteran){
-        o += `Plus ${veteranAmt}% off veteran discount. `;
-        total += veteranAmt;
-      }
-      if(isStudent || isVeteran){
-        o += `For a total of ${total}% off!`;
-      }
-      alert(o);
-      
-    }
-  </script>
 </html>
